@@ -5,6 +5,7 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.* ?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane id="AnchorPane" prefHeight="398.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.control.CalculadoraController">
@@ -21,12 +22,31 @@
       <Button layoutX="29.0" layoutY="167.0" mnemonicParsing="false" onAction="#divisao" text="Divisão" />
       <Button layoutX="90.0" layoutY="203.0" mnemonicParsing="false" onAction="#multiplicacao" text="Multiplicação" />
       <Button layoutX="31.0" layoutY="203.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
-      <TableView layoutX="290.0" layoutY="25.0" prefHeight="335.0" prefWidth="493.0">
+      <TableView fx:id="tbCalculadora" layoutX="290.0" layoutY="25.0" prefHeight="335.0" prefWidth="493.0">
         <columns>
-          <TableColumn prefWidth="117.0" text="Primeiro Valor" />
-          <TableColumn prefWidth="130.0" text="Segundo Valor" />
-          <TableColumn prefWidth="85.0" text="Operador" />
-          <TableColumn prefWidth="175.0" text="Resultado" />
+          <TableColumn text="ID">
+          <cellValueFactory>
+              <PropertyValueFactory property="id" />
+          </cellValueFactory>
+          </TableColumn>
+          
+           <TableColumn text="ID">
+          <cellValueFactory>
+              <PropertyValueFactory property="id" />
+          </cellValueFactory>
+          </TableColumn>
+          
+           <TableColumn text="ID">
+          <cellValueFactory>
+              <PropertyValueFactory property="id" />
+          </cellValueFactory>
+          </TableColumn>
+          
+           <TableColumn text="ID">
+          <cellValueFactory>
+              <PropertyValueFactory property="id" />
+          </cellValueFactory>
+          </TableColumn>
         </columns>
       </TableView>
     </children>

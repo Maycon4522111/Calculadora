@@ -9,16 +9,21 @@ import app.modelo.historico;
 import java.net.URL;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,6 +42,8 @@ public class CalculadoraController implements Initializable {
      private TextField txtResultado;
     @FXML
     private Button btnSoma;
+    @FXML
+    private TableView<?> tbCalculadora;
     @FXML
     private void soma(ActionEvent event) {
         EntityManagerFactory emf =Persistence.createEntityManagerFactory("atividadeAva");
@@ -132,11 +139,20 @@ public class CalculadoraController implements Initializable {
         txtNumero2.setText(null);
     }
     
-
+ 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       EntityManagerFactory emf = Persistence.createEntityManagerFactory("atividadeAva");
+        EntityManager em = emf.createEntityManager();
+        
+        Query query = em.createQuery("SELECT c FROM historico as c");
+        //query.setParameter("id");
+        
+        List<historico> Historico = query.getResultList();
+        
+        ObservableList obHistorico = FXCollections.observableArrayList(Historico);
+        tbCalculadora.setItems(obHistorico);
     }    
     
 }
