@@ -82,7 +82,7 @@ public class MenuTelasController implements Initializable {
  private void cadastroLogin(ActionEvent event) {
  try{
  FXMLLoader fxmlLoader = new FXMLLoader();
- fxmlLoader.setLocation(getClass().getResource("/br/edu/ifro/view/CadastroLogin.fxml"));
+ fxmlLoader.setLocation(getClass().getResource("/app/view/CadastroLogin.fxml"));
  Scene scene = new Scene(fxmlLoader.load());
  
  Stage stage = new Stage();
@@ -96,7 +96,7 @@ public class MenuTelasController implements Initializable {
  }
     @FXML
  public void efetuarLogin() throws IOException{
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("escola");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("atividadeAva");
         EntityManager em = emf.createEntityManager();
         Query query = em.createQuery("SELECT l FROM Login as l WHERE l.usuario = :usuario");        
         //Query query = em.createQuery("SELECT l FROM Login as l WHERE l.usuario = :usuario and l.senha = :senha");
@@ -112,10 +112,10 @@ public class MenuTelasController implements Initializable {
             if (login.getSenha().equals(senha) || login.getSenha().equals(senha2)) {
                 JOptionPane.showMessageDialog(null, "Login efetuado com sucesso");
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/br/edu/ifro/view/MenuPrincipal.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/app/view/Calculadora.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 Stage stage = new Stage();
-                stage.setTitle("Menu Principal");
+                stage.setTitle("Calculadora");
                 stage.setScene(scene);
                 stage.show();
                

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="334.0" prefWidth="299.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.control.CadastroLoginController">
+   <children>
+      <JFXTextField fx:id="txtUsuario" labelFloat="true" layoutX="69.0" layoutY="43.0" prefHeight="25.0" prefWidth="162.0" promptText="Usuário" />
+      <JFXButton layoutX="36.0" layoutY="252.0" onAction="#Verificar" text="Cadastrar" />
+      <JFXButton fx:id="btnCancelar" layoutX="119.0" layoutY="252.0" onAction="#cancelar" text="Cancelar" />
+      <JFXPasswordField fx:id="txtSenha" labelFloat="true" layoutX="69.0" layoutY="108.0" prefHeight="25.0" prefWidth="162.0" promptText="Senha" />
+      <JFXButton fx:id="btnLimpar" layoutX="205.0" layoutY="252.0" onAction="#limpar" text="Limpar" />
+      <JFXPasswordField fx:id="txtSenha2" labelFloat="true" layoutX="69.0" layoutY="167.0" prefHeight="25.0" prefWidth="162.0" promptText="Senha" />
+   </children>
+</AnchorPane>

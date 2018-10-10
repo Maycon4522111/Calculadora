@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="398.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.control.CalculadoraController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <TextField fx:id="txtNumero1" layoutX="29.0" layoutY="36.0" />
+      <TextField fx:id="txtNumero2" layoutX="29.0" layoutY="79.0" />
+      <TextField fx:id="txtResultado" layoutX="29.0" layoutY="125.0" />
+      <Label layoutX="189.0" layoutY="40.0" text="Numero 1" />
+      <Label layoutX="189.0" layoutY="83.0" text="Numero 2" />
+      <Label layoutX="189.0" layoutY="129.0" text="Resultado" />
+      <Button fx:id="btnSoma" layoutX="193.0" layoutY="167.0" mnemonicParsing="false" onAction="#soma" text="Soma" />
+      <Button layoutX="105.0" layoutY="167.0" mnemonicParsing="false" onAction="#subtracao" text="Subtrair" />
+      <Button layoutX="29.0" layoutY="167.0" mnemonicParsing="false" onAction="#divisao" text="Divisão" />
+      <Button layoutX="90.0" layoutY="203.0" mnemonicParsing="false" onAction="#multiplicacao" text="Multiplicação" />
+      <Button layoutX="31.0" layoutY="203.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <TableView layoutX="290.0" layoutY="25.0" prefHeight="335.0" prefWidth="493.0">
+        <columns>
+          <TableColumn prefWidth="117.0" text="Primeiro Valor" />
+          <TableColumn prefWidth="130.0" text="Segundo Valor" />
+          <TableColumn prefWidth="85.0" text="Operador" />
+          <TableColumn prefWidth="175.0" text="Resultado" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>
