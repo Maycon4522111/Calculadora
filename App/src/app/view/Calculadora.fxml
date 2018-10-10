@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.cell.*?>
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -11,43 +12,57 @@
 <AnchorPane id="AnchorPane" prefHeight="398.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.control.CalculadoraController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <TextField fx:id="txtNumero1" layoutX="29.0" layoutY="36.0" />
-      <TextField fx:id="txtNumero2" layoutX="29.0" layoutY="79.0" />
-      <TextField fx:id="txtResultado" layoutX="29.0" layoutY="125.0" />
       <Label layoutX="189.0" layoutY="40.0" text="Numero 1" />
       <Label layoutX="189.0" layoutY="83.0" text="Numero 2" />
-      <Label layoutX="189.0" layoutY="129.0" text="Resultado" />
-      <Button fx:id="btnSoma" layoutX="193.0" layoutY="167.0" mnemonicParsing="false" onAction="#soma" text="Soma" />
-      <Button layoutX="105.0" layoutY="167.0" mnemonicParsing="false" onAction="#subtracao" text="Subtrair" />
-      <Button layoutX="29.0" layoutY="167.0" mnemonicParsing="false" onAction="#divisao" text="Divisão" />
-      <Button layoutX="90.0" layoutY="203.0" mnemonicParsing="false" onAction="#multiplicacao" text="Multiplicação" />
-      <Button layoutX="31.0" layoutY="203.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <Label layoutX="190.0" layoutY="120.0" text="Resultado" />
       <TableView fx:id="tbCalculadora" layoutX="290.0" layoutY="25.0" prefHeight="335.0" prefWidth="493.0">
         <columns>
           <TableColumn text="ID">
           <cellValueFactory>
-              <PropertyValueFactory property="id" />
+              <PropertyValueFactory property="Id" />
           </cellValueFactory>
           </TableColumn>
           
-           <TableColumn text="ID">
+           <TableColumn text="Primeiro Valor">
           <cellValueFactory>
-              <PropertyValueFactory property="id" />
+              <PropertyValueFactory property="primeiroValor" />
           </cellValueFactory>
           </TableColumn>
           
-           <TableColumn text="ID">
+           <TableColumn text="Segundo Valor">
           <cellValueFactory>
-              <PropertyValueFactory property="id" />
+              <PropertyValueFactory property="segundoValor" />
           </cellValueFactory>
           </TableColumn>
           
-           <TableColumn text="ID">
+           <TableColumn text="Operador">
           <cellValueFactory>
-              <PropertyValueFactory property="id" />
+              <PropertyValueFactory property="operador" />
           </cellValueFactory>
           </TableColumn>
+          
+           <TableColumn text="Resultado">
+          <cellValueFactory>
+              <PropertyValueFactory property="resultado" />
+          </cellValueFactory>
+          </TableColumn>
+  
         </columns>
       </TableView>
+      <JFXTextField fx:id="txtNumero1" layoutX="38.0" layoutY="28.0" />
+      <JFXTextField fx:id="txtNumero2" layoutX="38.0" layoutY="67.0" />
+      <JFXTextField fx:id="txtResultado" layoutX="38.0" layoutY="108.0" />
+      <HBox layoutX="21.0" layoutY="175.0" prefHeight="73.0" prefWidth="256.0">
+         <children>
+            <JFXButton onAction="#divisao" prefHeight="62.0" prefWidth="60.0" style="-fx-background-color: #B8B2B2;" text="/" />
+            <Label prefHeight="17.0" prefWidth="8.0" />
+            <JFXButton onAction="#multiplicacao" prefHeight="62.0" prefWidth="59.0" style="-fx-background-color: #B8B2B2;" text="*" />
+            <Label prefHeight="17.0" prefWidth="8.0" />
+            <JFXButton onAction="#subtracao" prefHeight="62.0" prefWidth="57.0" style="-fx-background-color: #B8B2B2;" text="-" />
+            <Label prefHeight="17.0" prefWidth="8.0" />
+            <JFXButton fx:id="btnSoma" onAction="#soma" prefHeight="62.0" prefWidth="59.0" style="-fx-background-color: #B8B2B2;" text="+" />
+         </children>
+      </HBox>
+      <JFXButton layoutX="108.0" layoutY="287.0" onAction="#limpar" prefHeight="45.0" prefWidth="82.0" style="-fx-background-color: #B8B2B2;" text="Limpar" />
     </children>
 </AnchorPane>
